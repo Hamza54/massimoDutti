@@ -1,0 +1,42 @@
+﻿<Page x:ConnectionId='1'
+    x:Class="Fancybits.Views.OnNowPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Fancybits.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+     xmlns:vm="using:Fancybits.ViewModels" 
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <vm:OnNowViewModel x:ConnectionId='2' x:Name="ViewModel" />
+    </Page.DataContext>
+    <Grid>
+        <GridView x:ConnectionId='3'
+            x:Name="itemGridView"
+            AllowDrop="True"
+            CanDragItems="True"
+            ReorderMode="Enabled"
+                                                      
+            Grid.RowSpan="2"
+            Padding="116,137,40,46"
+            SelectionMode="None"
+            IsSwipeEnabled="false"
+            IsItemClickEnabled="True"
+            >
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid HorizontalAlignment="Left" Width="250" Height="250">
+                        <Border Background="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}">
+                            <Image Source="{Binding ImagePath}" Stretch="UniformToFill" AutomationProperties.Name="{Binding Title}"/>
+                        </Border>
+                        <StackPanel VerticalAlignment="Bottom" Background="{ThemeResource ListViewItemOverlayBackgroundThemeBrush}">
+                            <TextBlock Text="{Binding Title}" Foreground="{ThemeResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextBlockStyle}" Height="60" Margin="15,0,15,0"/>
+                            <TextBlock Text="{Binding Subtitle}" Foreground="{ThemeResource ListViewItemOverlaySecondaryForegroundThemeBrush}" Style="{StaticResource CaptionTextBlockStyle}" TextWrapping="NoWrap" Margin="15,0,15,10"/>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+    </Grid>
+</Page>
+
