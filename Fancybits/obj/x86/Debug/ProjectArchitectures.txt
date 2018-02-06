@@ -1,1 +1,0 @@
-c:\users\hlamzadr\documents\visual studio 2015\Projects\Fancybits\Fancybits\Fancybits.csproj;x86

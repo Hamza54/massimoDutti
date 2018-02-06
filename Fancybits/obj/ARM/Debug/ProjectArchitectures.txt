@@ -1,1 +1,0 @@
-C:\Users\hlamzadr\Documents\Visual Studio 2015\Projects\Fancybits\Fancybits\Fancybits.csproj;arm
